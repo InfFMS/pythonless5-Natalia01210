@@ -7,3 +7,20 @@
 # [1, 2, 3, 2, 5, 10]
 # Вывод:
 # значение:2 индексы 1 и 3
+from random import randint
+
+N = int(input())
+m = []
+w = []
+for i in range(101):
+    w.append(0)
+for i in range(N):
+    m.append(randint(0, 100))
+    w[m[i]] += 1
+for i in range(101):
+    if(w[i] > 1):
+        print("значение:" + str(i) + ' индексы' , end=' ')
+        for j in range(N):
+            if(m[j] == i):
+                print(j, end=' ')
+        print()
