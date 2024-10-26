@@ -5,3 +5,13 @@
 # вектор a = [0, 1, 0]
 # вектор b = [1, 0, 0]
 # Угол = 90
+import math
+from math import degrees
+
+
+def F(a, b):
+    if((a[0]**2 + a[1]**2 + a[2]**2) == 0 or b[0]**2 + b[1]**2 + b[2]**2 == 0):
+        return 0
+    c = a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
+    return (int(degrees(math.acos(c / ((a[0]**2 + a[1]**2 + a[2]**2)**0.5 * (b[0]**2 + b[1]**2 + b[2]**2)**0.5)))))
+
