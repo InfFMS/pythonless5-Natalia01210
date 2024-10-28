@@ -10,8 +10,14 @@ from math import degrees
 
 
 def F(a, b):
-    if((a[0]**2 + a[1]**2 + a[2]**2) == 0 or b[0]**2 + b[1]**2 + b[2]**2 == 0):
+    x = 0
+    y = 0
+    c = 0
+    for i in range(len(a)):
+        x += a[i]**2
+        y += b[i]**2
+        c += a[i] * b[i]
+    if(x == 0 or y == 0):
         return 0
-    c = a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
-    return (int(degrees(math.acos(c / ((a[0]**2 + a[1]**2 + a[2]**2)**0.5 * (b[0]**2 + b[1]**2 + b[2]**2)**0.5)))))
+    return int(degrees(math.acos(c / (x ** 0.5 * y ** 0.5))))
 
